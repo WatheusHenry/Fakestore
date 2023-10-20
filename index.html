@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{FakeStore}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid mx-5">
+            <a class="navbar-brand fw-bold" href="#">{FakeStore}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <h1 class="d-flex justify-content-center my-5 fw-bold ">{FakeStore}</h1>
+        <div class="d-flex justify-content-center my-5">
+            <h4 class="   text-center fw-bold" style="width: 45rem;">Lorem ipsum dolor
+                sit
+                amet, consectetur adipiscing elit.
+                Proin sit amet magna vel leo euismod mattis. Nulla at nisl in risus semper sagittis sit amet quis dui.
+            </h4>
+        </div>
+        <div class=" d-flex justify-content-center my-5">
+            <h4 class="fw-bold">{Products}</h4>
+        </div>
+        <div class="d-flex justify-content-end mx-5 gap-3">
+            <h4>Organizar por:</h4>
+            <div class="dropdown bg-white">
+                <button class="btn btn-outline-primary dropdown-toggle " type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Categorias
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" id="categoryOption1" data-category="electronics"> Eletronicos</a></li>
+                    <li><a class="dropdown-item" id="categoryOption2" data-category="jewelery">Joalheria</a></li>
+                    <li><a class="dropdown-item" id="categoryOption3" data-category="men's clothing">Masculino</a></li>
+                    <li><a class="dropdown-item" id="categoryOption4" data-category="women's clothing">Feminino</a></li>
+                </ul>
+            </div>
+            <button type="button" id="sortAsc" class="btn btn-primary">Crescente</button>
+            <button type="button" id="sortDesc" class="btn btn-primary">Decrescente</button>
+
+
+        </div>
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <!-- Seu grid de produtos aqui -->
+                <div id="productList" class="mx-auto my-5">
+
+                </div>
+            </div>
+        </div>
+        <!-- Aqui os produtos serão inseridos dinamicamente usando JavaScript -->
+
+
+        <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    </main>
+</body>
+
+</html>
