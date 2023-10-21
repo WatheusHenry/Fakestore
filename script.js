@@ -29,12 +29,12 @@ function displayProducts(products) {
       "justify-content-center"
     );
     productItem.innerHTML = `
-          <div class="card py-5" style="width: 18rem;">
+          <div class="card py-5 rounded" style="width: 18rem;">
             <img src="${product.image}" class="card-img-top mx-auto" alt="..." style="width: 150px; height: 150px;">
             <div class="card-body text-center"> <!-- Centralize o conteúdo horizontalmente -->
-              <h5 class="card-title">${product.title}</h5>
+              <h6 class="card-title">${product.title}</h5>
               <p class="card-text">$${product.price}</p>
-              <a href="#" class="btn btn-primary">Detalhes</a>
+              <a href="#" class="btn btn-custom">Detalhes</a>
             </div>
           </div>
         `;
@@ -54,6 +54,11 @@ function filterByCategory(products, category) {
   return products.filter((product) => product.category === category);
 }
 
+function updateDropdownButtonText(selectedCategory) {
+  const dropdownButton = document.getElementById("dropdownButton");
+  dropdownButton.textContent = selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1);
+}
+
 // Função para classificar produtos por preço (ascendente ou descendente)
 function sortProducts(products, ascending) {
   return products.sort((a, b) => {
@@ -65,9 +70,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   const products = await fetchProducts();
   displayProducts(products);
 
+  const dropdownButton = document.getElementById("dropdownButton");
+
+
   const categoryOption1 = document.getElementById("categoryOption1");
   categoryOption1.addEventListener("click", () => {
     const selectedCategory = categoryOption1.getAttribute("data-category");
+    dropdownButton.textContent = "Eletronicos";
     const filteredProducts = filterByCategory(products, selectedCategory);
     displayProducts(filteredProducts);
   });
@@ -75,6 +84,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const categoryOption2 = document.getElementById("categoryOption2");
   categoryOption2.addEventListener("click", () => {
     const selectedCategory = categoryOption2.getAttribute("data-category");
+    dropdownButton.textContent = "Joalheria";
     const filteredProducts = filterByCategory(products, selectedCategory);
     displayProducts(filteredProducts);
   });
@@ -82,12 +92,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   const categoryOption3 = document.getElementById("categoryOption3");
   categoryOption3.addEventListener("click", () => {
     const selectedCategory = categoryOption3.getAttribute("data-category");
+    dropdownButton.textContent = "Masculino";
     const filteredProducts = filterByCategory(products, selectedCategory);
     displayProducts(filteredProducts);
   });
   const categoryOption4 = document.getElementById("categoryOption4");
   categoryOption4.addEventListener("click", () => {
     const selectedCategory = categoryOption4.getAttribute("data-category");
+    dropdownButton.textContent = "Feminino";
     const filteredProducts = filterByCategory(products, selectedCategory);
     displayProducts(filteredProducts);
   });
