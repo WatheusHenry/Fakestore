@@ -14,7 +14,7 @@ function displayProducts(products) {
     const product = products[i];
 
     if (i % 3 === 0) {
-      // Cria uma nova linha (row) a cada 3 produtos
+      // Cria uma nova linha a cada 3 produtos
       const row = document.createElement("div");
       row.classList.add("row");
       productList.appendChild(row);
@@ -28,13 +28,14 @@ function displayProducts(products) {
       "align-items-center",
       "justify-content-center"
     );
+    //criação de card para cada produto
     productItem.innerHTML = `
-          <div class="card py-5 rounded" style="width: 18rem;">
+          <div class="card py-5 rounded shadow-sm" style="width: 20rem;">
             <img src="${product.image}" class="card-img-top mx-auto" alt="..." style="width: 150px; height: 150px;">
             <div class="card-body text-center"> <!-- Centralize o conteúdo horizontalmente -->
               <h6 class="card-title">${product.title}</h5>
               <p class="card-text">$${product.price}</p>
-              <a href="#" class="btn btn-custom">Detalhes</a>
+              <button  class="btn btn-custom">Detalhes</button>
             </div>
           </div>
         `;
@@ -42,9 +43,22 @@ function displayProducts(products) {
     const currentRow = productList.lastChild;
     currentRow.appendChild(productItem);
 
-    // Adicione eventos de clique para mostrar detalhes adicionais
+
     productItem.addEventListener("click", () => {
-      alert(`Detalhes do produto: ${product.description}`);
+      const modalTitle = document.getElementById("modalTitle");
+      const modalImage = document.getElementById("modalImage");
+      const modalDescription = document.getElementById("modalDescription");
+      const modalPrice = document.getElementById("modalPrice");
+
+      modalTitle.textContent = product.title;
+      modalImage.src = product.image;
+      modalDescription.textContent = product.description;
+      modalPrice.textContent = `$${product.price}`;
+
+      const productModal = new bootstrap.Modal(
+        document.getElementById("productModal")
+      );
+      productModal.show();
     });
   }
 }
@@ -54,9 +68,11 @@ function filterByCategory(products, category) {
   return products.filter((product) => product.category === category);
 }
 
+//função para atualizar dropdown
 function updateDropdownButtonText(selectedCategory) {
   const dropdownButton = document.getElementById("dropdownButton");
-  dropdownButton.textContent = selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1);
+  dropdownButton.textContent =
+    selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1);
 }
 
 // Função para classificar produtos por preço (ascendente ou descendente)
@@ -71,7 +87,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   displayProducts(products);
 
   const dropdownButton = document.getElementById("dropdownButton");
-
 
   const categoryOption1 = document.getElementById("categoryOption1");
   categoryOption1.addEventListener("click", () => {
