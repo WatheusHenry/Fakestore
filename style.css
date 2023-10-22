@@ -1,0 +1,31 @@
+body {
+    font-family: Inter;
+}
+
+.btn-custom {
+    background-color: #7749F8;
+    border-color: #7749F8;
+    color: #fff;
+}
+
+.btn-custom:hover {
+    color: white;
+    background-color: #683AEA;
+}
+
+.dropdown-item:active {
+    background-color: #7749F8;
+    color: #fff;
+}
+
+.dropdown-item:hover {
+    background-color: #EBE5FC;
+    color: #7749F8;
+    cursor: pointer;
+}
+
+.profile:hover {
+    cursor: pointer;
+    background: #EBE5FC;
+    border-radius: 100%;
+}
