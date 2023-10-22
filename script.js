@@ -35,7 +35,7 @@ function displayProducts(products) {
             <div class="card-body text-center"> <!-- Centralize o conteúdo horizontalmente -->
               <h6 class="card-title">${product.title}</h5>
               <p class="card-text">$${product.price}</p>
-              <button  class="btn btn-custom">Detalhes</button>
+              <button  class="btn btn-custom shadow-sm">Detalhes</button>
             </div>
           </div>
         `;
