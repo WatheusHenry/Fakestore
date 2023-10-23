@@ -1,4 +1,8 @@
 # Fakestore
+
+#URL: https://watheushenry.github.io/Fakestore/
+#Figma: https://www.figma.com/file/3kQkHXVes4Djscb5dvdEz2/FakeStore?type=design&node-id=45-130&mode=design&t=htqhoFaWOCCW4cez-0
+
 ## Teste de Contratação Ciag - Projeto Fake Store API
 
 Este repositório contém o código-fonte de um projeto criado como parte de um teste de contratação para a empresa Ciag. O projeto é uma aplicação web simples construída utilizando apenas HTML, JavaScript e CSS puro. Ele consome dados de uma API de exemplo chamada "Fake Store API", que fornece informações fictícias sobre produtos.
