@@ -43,7 +43,6 @@ function displayProducts(products) {
     const currentRow = productList.lastChild;
     currentRow.appendChild(productItem);
 
-
     productItem.addEventListener("click", () => {
       const modalTitle = document.getElementById("modalTitle");
       const modalImage = document.getElementById("modalImage");
