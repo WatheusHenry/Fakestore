@@ -1,7 +1,7 @@
 # Fakestore
 
-#URL: https://watheushenry.github.io/Fakestore/
-#Figma: https://www.figma.com/file/3kQkHXVes4Djscb5dvdEz2/FakeStore?type=design&node-id=45-130&mode=design&t=htqhoFaWOCCW4cez-0
+### URL: https://watheushenry.github.io/Fakestore/
+### Figma: https://www.figma.com/file/3kQkHXVes4Djscb5dvdEz2/FakeStore?type=design&node-id=45-130&mode=design&t=htqhoFaWOCCW4cez-0
 
 ## Teste de Contratação Ciag - Projeto Fake Store API
 
