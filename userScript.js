@@ -6,8 +6,7 @@ async function fetchUser() {
 
 function displayAboutUser(user) {
   const aboutUser = document.getElementById("aboutUser");
-  aboutUser.innerHTML = ""; // Limpa a lista
-
+  aboutUser.innerHTML = ""; 
   const User = document.createElement("div");
   User.innerHTML = `
       <div class="d-flex flex-column gap-3">
@@ -22,22 +21,22 @@ function displayAboutUser(user) {
       </div>
       `;
 
-  aboutUser.appendChild(User); // Adicione User ao aboutUser
+  aboutUser.appendChild(User); 
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
   const user = await fetchUser();
 
   const editButton = document.getElementById("editButton");
-  const aboutUser = document.getElementById("aboutUser"); // Adicione esta linha
+  const aboutUser = document.getElementById("aboutUser"); 
 
   function toggleEdit() {
     const inputs = aboutUser.querySelectorAll("input");
     inputs.forEach((input) => {
       if (input.hasAttribute("disabled")) {
-        input.removeAttribute("disabled"); // Remove o atributo "disabled"
+        input.removeAttribute("disabled"); 
       } else {
-        input.setAttribute("disabled", "true"); // Define o atributo "disabled"
+        input.setAttribute("disabled", "true"); 
       }
     });
   }
@@ -48,7 +47,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       editButton.innerText = "Salvar";
     } else {
       editButton.innerText = "Editar";
-      // Aqui você pode adicionar lógica para salvar os dados editados, se necessário.
     }
   });
   displayAboutUser(user);
